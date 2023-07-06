@@ -1,12 +1,17 @@
-let casualNumberPc = Math.floor(Math.random() * 6) + 1;
-let casualNumberUtente = Math.floor(Math.random() * 6) + 1;
-let casualNumberUtente = casualNumberPc;
+document
+  .getElementById("generateNumbers")
+  .addEventListener("click", function () {
+    let casualNumberPc = Math.floor(Math.random() * 6) + 1;
+    let casualNumberUtente = Math.floor(Math.random() * 6) + 1;
 
-let pc = document.getElementById("casualNumPc");
-let utente = document.getElementById("casualNumUtente");
+    document.getElementById("casualNumPc").textContent = casualNumberPc;
+    document.getElementById("casualNumUtente").textContent = casualNumberUtente;
 
-if (pc > utente) {
-    console.log("PC WINS")
-} else (utente > pc) {
-    console.log("UTENTE WINS")
-}
+    if (casualNumberPc > casualNumberUtente) {
+      console.log("PC WINS");
+    } else if (casualNumberUtente > casualNumberPc) {
+      console.log("UTENTE WINS");
+    } else {
+      console.log("TIE");
+    }
+  });
